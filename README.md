@@ -47,3 +47,7 @@ After being logged in as admin you could make your own admin account.
 
 1. It's important to run XAMPP.
 2. The database has to be on your device to be able to sumbit bookings and view them.
+
+### Other information
+
+- This project was made by Felix Huel (Front-end), Fabian Nierop (Back-end, Database), Xander Kaptein (Database), Joram Swarts (Data Visualizing) and Bo Rondaij (Data Visualizing).
