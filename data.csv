@@ -1,6 +1,0 @@
-﻿Location,Type,Coordinates Starport Transit Hub,Distance (KM),Destination City,Sum of Estimated Starport Cost,Available Transit Options,Latitude,Longtitude
-Rio de Janeiro,At sea,"'-22.9110, -43.1937",4.5,Rio de Janeiro,$1600000000,"Tesla Model B boat, VIP helicopter",-22908333,-43196388
-Cape Town,At sea,"'-33.9272, 18.4214",4,Cape Town,$1500000000,"Tesla Model B boat, VIP helicopter",-33924868,18424055
-New York,At sea,"40.7110, -74.0088",5,New York,$1800000000,"Tesla Model B boat, VIP helicopter",407128,-740060
-Amsterdam,At sea,"52.3764, 4.8948",4,Amsterdam,$1500000000,"Tesla Model B boat, VIP helicopter",523782,48975
-Tokyo,Large Lake,"35.6868, 139.6944",4,Tokyo,$1700000000,"Tesla Model B boat, VIP helicopter, Model X",356895,1396917
