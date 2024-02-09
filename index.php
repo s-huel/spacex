@@ -16,15 +16,13 @@
   <a href="#">ABOUT US</a>
 </div>
 
-<!-- Use any element to open the sidenav -->
 <span onclick="openNav()"><img src="images/logo.png" alt="logo"></span>
 
-<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
 <div id="main">
     <h1 class="txt-main">The Future Is Here</h1>
 
     <div class="video">
-        <iframe loading="lazy" width="1000" height="500" class="embed-responsive-item" src="https://www.youtube.com/embed/zqE-ultsWt0"
+        <iframe width="1000" height="500" class="embed-responsive-item" src="https://www.youtube.com/embed/zqE-ultsWt0"
             allowfullscreen></iframe>
     </div>
 
@@ -50,7 +48,6 @@
         </div>
     </div> 
 </div> 
-    </div>
 
     
 
