@@ -14,6 +14,7 @@
 <body>
 
 <img src="images/logo.png" alt="logo">
+<p>&copy; 2024 f-huel. All rights reserved.</p>
 
 <input type="checkbox" id="active">
     <label for="active" class="menu-btn"><span></span></label>
@@ -49,18 +50,25 @@
               <p>
                 With our reusable Falcon 9 and Falcon Heavy rockets, we have successfully demonstrated the potential of reusable rocket technology for cost-effective space missions.
               </p>
+              <br>
+              <a href="#" class="link">READ MORE >></a>
             </div>
             <div class="text-box">
               <h3>Starports</h3>
               <p>
                 Starbase is a Starport where all our rockets are located. We repair, refill the fuel and check the rockets to make sure everyone has a safe trip to their destination.
               </p>
+              <br>
+              <a href="#" class="link">READ MORE >></a>
             </div>
           </div>
         </div>
       </section>
     </div>
+      
 </input>
+
+
 
 <script src="javascript/main.js"></script>
 
