@@ -1,14 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Starport</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
+require_once 'database/connection.php';
 
-<body>
+$username = '';
 
-</body>
-</html>
+$password = '';
+
+$hash = password_hash($password, PASSWORD_DEFAULT);
+
+$query = 'INSERT INTO accounts (account_name, account_passwd) VALUES (:name, :passwd)';
+
+$values = [':name' => $username, ':passwd' => $hash];
+
+try {
+    $res = $pdo->prepare($query);
+    $res->execute($values);
+} catch (PDOException $e) {
+    echo 'Query error.';
+    die();
+}
