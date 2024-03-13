@@ -8,18 +8,7 @@ CREATE TABLE `admins` (
     `adminID` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `firstName` VARCHAR(50) NOT NULL,
     `lastName` VARCHAR(50) NOT NULL,
-    `email` VARCHAR(100) NOT NULL,
-    `password` VARCHAR(100) NOT NULL
-);
-
-CREATE TABLE `users` (
-    `userID` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `firstName` VARCHAR(50) NOT NULL,
-    `lastName` VARCHAR(50) NOT NULL,
-    `email` VARCHAR(100) NOT NULL,
-    `password` VARCHAR(100) NOT NULL,
-    `adminID` INT NOT NULL,
-    FOREIGN KEY (`adminID`) REFERENCES `admins` (`adminID`)
+    `email` VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE `airports` (
@@ -52,26 +41,29 @@ CREATE TABLE `ships` (
     FOREIGN KEY (`flightID`) REFERENCES `flights` (`flightID`)
 );
 
-CREATE TABLE `seats` (
-    `seatID` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `flightID` INT NOT NULL,
-    `shipID` INT NOT NULL,
-    FOREIGN KEY (`flightID`) REFERENCES `flights` (`flightID`)
-);
-
 CREATE TABLE `bookings` (
     `bookID` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `firstName` VARCHAR(50) NOT NULL,
     `lastName` VARCHAR(50) NOT NULL,
     `email` VARCHAR(100) NOT NULL,
     `flightID` INT NOT NULL,
-    `seatID` INT NOT NULL,
     `departureAirport` ENUM('Amsterdam', 'New York', 'Rio de Janeiro', 'Tokyo', 'Cape Town') NOT NULL,
     `arrivalAirport` ENUM('Amsterdam', 'New York', 'Rio de Janeiro', 'Tokyo', 'Cape Town') NOT NULL,
     `departureAirportID` INT NOT NULL,
     `arrivalAirportID` INT NOT NULL,
     FOREIGN KEY (`flightID`) REFERENCES `flights` (`flightID`),
-    FOREIGN KEY (`seatID`) REFERENCES `seats` (`seatID`),
     FOREIGN KEY (`departureAirportID`) REFERENCES `airports` (`airportID`),
     FOREIGN KEY (`arrivalAirportID`) REFERENCES `airports` (`airportID`)
+);
+
+CREATE TABLE `users` (
+    `userID` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `firstName` VARCHAR(50) NOT NULL,
+    `lastName` VARCHAR(50) NOT NULL,
+    `email` VARCHAR(100) NOT NULL,
+    `password` VARCHAR(100) NOT NULL,
+    `adminID` INT NULL,
+    `bookingID` INT NULL,
+    FOREIGN KEY (`adminID`) REFERENCES `admins` (`adminID`),
+    FOREIGN KEY (`bookingID`) REFERENCES `bookings` (`bookID`)
 );
