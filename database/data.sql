@@ -34,6 +34,6 @@ VALUES
 
 INSERT INTO `users` (`firstName`, `lastName`, `email`, `password`, `adminID`, `bookingID`)
 VALUES
-    ('Felix', 'Huel', 'felix.huel@gmail.com', 'admin', 1, NULL),
-    ('John', 'Doe', 'john@doe.com', 'user', NULL, 1),
-    ('Jane', 'Doe', 'jane@doe.com', 'user', NULL, 2);
+    ('Felix', 'Huel', 'felix.huel@gmail.com', '$2y$10$Nn7.wIRIWe.Ciwuiszi2E.qvxWnkX5C.MV3PZ6PJAFRrr9D/PMIk2', 1, NULL), -- password = admin
+    ('John', 'Doe', 'john@doe.com', '$2y$10$eEq5rPxyI/sbfvU/Xis1EOL4Z8hcyFzzv8SzMD.Cl5CxC/pQARp0q', NULL, 1), -- password = user
+    ('Jane', 'Doe', 'jane@doe.com', '$2y$10$/xDDT7JnErSNqFOewyZ0AuvY8hV7I6YbzlXt3NtnpvJZQ/4k1mf7S', NULL, 2); -- password = user
