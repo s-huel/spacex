@@ -34,6 +34,6 @@ VALUES
 
 INSERT INTO `users` (`firstName`, `lastName`, `email`, `password`, `adminID`, `bookingID`)
 VALUES
-    ('Felix', 'Huel', 'felix.huel@gmail.com', '$2y$10$Nn7.wIRIWe.Ciwuiszi2E.qvxWnkX5C.MV3PZ6PJAFRrr9D/PMIk2', 1, NULL), -- password = admin
-    ('John', 'Doe', 'john@doe.com', '$2y$10$eEq5rPxyI/sbfvU/Xis1EOL4Z8hcyFzzv8SzMD.Cl5CxC/pQARp0q', NULL, 1), -- password = user
-    ('Jane', 'Doe', 'jane@doe.com', '$2y$10$/xDDT7JnErSNqFOewyZ0AuvY8hV7I6YbzlXt3NtnpvJZQ/4k1mf7S', NULL, 2); -- password = user
+    ('Felix', 'Huel', 'felix.huel@gmail.com', '$2y$10$XYOZ/fMOqO0PdY5OMCX3HuI3DaRM6ahzgNT3mKlV2KCLRJcxg5sL2', 1, NULL), -- password = admin
+    ('John', 'Doe', 'john@doe.com', '$2y$10$Ke6xnFSDtnKK5FGNEnfky.kNa.8h/8ADw6I6Wz8g/LZzsWwN682fG', NULL, 1), -- password = john
+    ('Jane', 'Doe', 'jane@doe.com', '$2y$10$Iu0M7s3gSJELleBUUtM4muan02o6Aad8/RcFsH5QASIqR2qZSO.NS', NULL, 2); -- password = jane
