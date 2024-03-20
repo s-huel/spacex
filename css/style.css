@@ -7,7 +7,8 @@
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  background-color: #f1f1f1;
+  background: linear-gradient(#f1f1f1, #acc8e6);
+  background-attachment: fixed;
 }
 
 .logo {
@@ -95,6 +96,7 @@ article {
   width: calc(50% - 10px);
   padding: 20px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.12), 0 2px 3px 0 rgba(0, 0, 0, 0.22);
+  border-radius: 2px;
 }
 
 article a {

@@ -20,16 +20,14 @@ if (isset($_POST['login'])) {
 
     if ($user && password_verify($password, $user['password'])) {
         if ($user['adminID'] !== null) {
-            // Admin login
             $_SESSION['user_id'] = $user['adminID'];
             $_SESSION['is_admin'] = true;
-            header("Location: index.php"); // Redirect to admin dashboard
+            header("Location: index.php");
             exit();
         } else {
-            // Regular user login
             $_SESSION['user_id'] = $user['userID'];
             $_SESSION['is_admin'] = false;
-            header("Location: index.php"); // Redirect to user dashboard
+            header("Location: index.php");
             exit();
         }
     } else {
@@ -50,21 +48,45 @@ if (isset($_POST['login'])) {
 </head>
 <body>
 
-    <form method="post" class="form">
-        <h1>Login</h1>
-        <?php
-        
-        if (isset($loginError)) {
-            echo '<p style="color: red;">' . $loginError . '</p>';
-        }
+    <div class="login-box">
+        <img src="images/logo.png" alt="logo">
+        <h2>Login</h2>
 
-        ?>
-        <label for="email" class="label">Email:</label>
-        <input type="email" name="email" placeholder="Email" class="input" required>
-        <label for="password" class="label">Password:</label>
-        <input type="password" name="password" placeholder="Password" class="input" required>
-        <input type="submit" value="LOGIN" name="login" class="button">
-    </form>
+        <form method="post">
+            <div class="user-box">
+                <input type="text" name="email" required>
+                <label>Email</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="password" required>
+                <label>Password</label>
+            </div>
+            <?php
+        
+            if (isset($loginError)) {
+                echo '<p style="color: red;">' . $loginError . '</p>';
+            }
+
+            ?>
+            
+            <button type="submit" name="login" class="button">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                LOGIN
+            </button>
+
+            <a href="signup.php">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                SIGN UP
+            </a>
+
+        </form>
+    </div>
     
 </body>
 </html>
