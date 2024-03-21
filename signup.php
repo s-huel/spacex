@@ -1,3 +1,24 @@
+<?php
+
+include 'database/connection.php';
+
+if (isset($_POST['signup'])) {
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    $query_signup = "INSERT INTO `users` (`firstName`, `lastName`, `email`, `password`) VALUES (?, ?, ?, ?)";
+    $stmt = $pdo->prepare($query_signup);
+    $stmt->execute([$firstName, $lastName, $email, $hashedPassword]);
+
+    header("Location: index.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +35,14 @@
         <h2>Sign Up</h2>
 
         <form method="post">
+            <div class="user-box">
+                <input type="text" name="firstName" required>
+                <label>First Name</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="lastName" required>
+                <label>Last Name</label>
+            </div>
             <div class="user-box">
                 <input type="text" name="email" required>
                 <label>Email</label>
