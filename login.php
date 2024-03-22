@@ -22,12 +22,12 @@ if (isset($_POST['login'])) {
         if ($user['adminID'] !== null) {
             $_SESSION['user_id'] = $user['adminID'];
             $_SESSION['is_admin'] = true;
-            header("Location: index.php");
+            header("Location: admindash.php");
             exit();
         } else {
             $_SESSION['user_id'] = $user['userID'];
             $_SESSION['is_admin'] = false;
-            header("Location: index.php");
+            header("Location: userdash.php");
             exit();
         }
     } else {
@@ -42,6 +42,7 @@ if (isset($_POST['login'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Félix Huel">
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="css/form.css">
     <title>Login</title>
