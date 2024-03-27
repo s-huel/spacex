@@ -24,6 +24,8 @@ CREATE TABLE `flights` (
     `arrival` VARCHAR(100) NOT NULL,
     `date` DATE NOT NULL,
     `time` TIME NOT NULL,
+    `status` ENUM('Scheduled', 'Cancelled', 'Delayed', 'Completed') NOT NULL DEFAULT 'Scheduled',
+    `cancellationReason` VARCHAR(255) NULL,
     `departureAirport` ENUM('Amsterdam', 'New York', 'Rio de Janeiro', 'Tokyo', 'Cape Town') NOT NULL,
     `arrivalAirport` ENUM('Amsterdam', 'New York', 'Rio de Janeiro', 'Tokyo', 'Cape Town') NOT NULL,
     `departureAirportID` INT NOT NULL,
