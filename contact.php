@@ -54,7 +54,7 @@ if (isset($_GET['logout'])) {
                 </article>
                 <article>
                     <h3>Phone</h3>
-                    <p>+1 123-456-7890</p>
+                    <p>+1-310-363-6000</p>
                 </article>
             </div>
         </section>
