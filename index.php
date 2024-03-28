@@ -13,6 +13,48 @@ try {
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
+
+// Function to scrape SpaceX news
+function scrapeSpaceXNews() 
+{
+    include_once('simple_html_dom.php');
+    $html = file_get_html('https://www.spacex.com/updates/');
+    $articles = array();
+
+    if ($html) {
+        $items = $html->find('.item');
+        $count = 0;
+
+        foreach ($items as $item) {
+            $date = $item->find('.date', 0)->plaintext;
+            $title = $item->find('.label', 0)->plaintext;
+            $description = $item->find('.contents', 0)->plaintext;
+
+            // Remove any HTML tags from the description
+            $description = strip_tags($description);
+
+            // Only add articles with a description
+            if (!empty($description)) {
+                // Add the article to the array
+                $articles[] = array(
+                    'date' => $date,
+                    'title' => $title,
+                    'description' => $description
+                );
+                
+                // Break the loop after fetching 4 articles
+                if (++$count >= 4) {
+                    break;
+                }
+            }
+        }
+    }
+
+    return $articles;
+}
+
+// Fetch SpaceX news
+$articles = scrapeSpaceXNews();
 ?>
 
 <!DOCTYPE html>
@@ -62,39 +104,33 @@ try {
 
         <section class="row reveal">
             <article>
-                <h3>Starships</h3>
+                <h3>Starship</h3>
                 <p>The Starship has 2 models, Falcon 9 and Falcon 9 Deluxe. These are the transport to the locations.</p>
-                <a href="info.php#STARSHIPS">Read more &#8227;</a>
+                <a href="info.php#STARSHIP">Read more &#8227;</a>
             </article>
             <article>
-                <h3>Starports</h3>
+                <h3>Starport</h3>
                 <p>Our Starports are the locations where you can travel to. There's a total of 5 Starports located in every continent.</p>
-                <a href="info.php#STARPORTS">Read more &#8227;</a>
+                <a href="info.php#STARPORT">Read more &#8227;</a>
             </article>
         </section>
 
         <section class="reveal">
             <h1>Latest News</h1>
-            <div class="row">
-                <article>
-                    <h3>title</h3>
-                    <p>paragraph</p>
-                </article>
-                <article>
-                    <h3>title</h3>
-                    <p>paragraph</p>
-                </article>
-            </div>
-            <div class="row">
-                <article>
-                    <h3>title</h3>
-                    <p>paragraph</p>
-                </article>
-                <article>
-                    <h3>title</h3>
-                    <p>paragraph</p>
-                </article>
-            </div>
+            <?php 
+            // Split articles into rows with two articles per row
+            $articleChunks = array_chunk($articles, 2);
+            foreach ($articleChunks as $row) : ?>
+                <div class="row">
+                    <?php foreach ($row as $article) : ?>
+                        <article>
+                            <p><?php echo $article['date']; ?></p>
+                            <h3><?php echo $article['title']; ?></h3>
+                            <p><?php echo $article['description']; ?></p>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
+            <?php endforeach; ?>
         </section>
     </div>
 
