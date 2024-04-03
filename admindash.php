@@ -26,7 +26,9 @@ if (isset($_GET['logout'])) {
 <body>
 
     <ul class="sidenav">
-        <a href="index.php"><img src="images/logo.png" alt="logo" class="logo"></a>
+        <a href="index.php">
+           <img src="images/logo.png" alt="logo" class="logo"> 
+        </a>
         <li><a href="booking.php">BOOKING</a></li>
         <li><a href="info.php">INFO</a></li>
         <li><a href="contact.php">CONTACT</a></li>

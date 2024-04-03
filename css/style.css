@@ -104,6 +104,11 @@ article a {
   color: #000;
 }
 
+article img {
+  height: 80%;
+  width: 80%;
+}
+
 article:hover {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.12), 0 4px 6px 0 rgba(0, 0, 0, 0.22);
 }
@@ -229,4 +234,24 @@ h1{
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+/* In-page navigation styles */
+ul.sidenav .inpage-nav {
+  margin-bottom: 20px;
+}
+
+ul.sidenav .inpage-nav a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+ul.sidenav .inpage-nav a:hover {
+  background-color: #00438f;
+  color: white;
 }
