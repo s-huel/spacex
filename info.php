@@ -134,22 +134,22 @@ $articles = scrapeSpaceXNews();
                         metric tonnes fully reusable and 250 metric tonnes expendable.
                     </p>
                     <br/>
-                    <table class="">
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2">HEIGHT</td>
-                                        <td>120 M / 394 ft</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">DIAMETER</td>
-                                        <td>9 m / 29.5 ft</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">PAYLOAD CAPACITY</td>
-                                        <td>100 - 150 t (fully reusable)</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">HEIGHT</td>
+                                <td>120 M / 394 ft</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">DIAMETER</td>
+                                <td>9 m / 29.5 ft</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">PAYLOAD CAPACITY</td>
+                                <td>100 - 150 t (fully reusable)</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </article>
             </div>
 
@@ -160,7 +160,11 @@ $articles = scrapeSpaceXNews();
                 
                 <article>
                     <h3>Raptor Engine</h3>
-                    <p>Explantaion</p>
+                    <p>
+                        The Raptor engine is a reusable methane-oxygen staged-combustion engine that powers the Starship system and has twice the thrust of the Falcon 9 Merlin engine. 
+                        Starship will be powered by six engines, three Raptor engines, and three Raptor Vacuum (RVac) engines, which are designed for use in the vacuum of space. 
+                        Super Heavy will be powered by 33 Raptor engines, with 13 in the center and the remaining 20 around the perimeter of the booster’s aft end. 
+                    </p>
                 </article>
             </div>   
         </section>

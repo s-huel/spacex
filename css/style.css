@@ -92,9 +92,9 @@ section {
 
 article {
   background-color: #fff;
-  background-color: #fff;
   width: calc(50% - 10px);
-  padding: 20px;
+  height: 400px; /* Set a fixed height */
+  padding: 30px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.12), 0 2px 3px 0 rgba(0, 0, 0, 0.22);
   border-radius: 2px;
 }
@@ -104,10 +104,12 @@ article a {
   color: #000;
 }
 
+/* Smaller Image Styling */
 article img {
-  height: 80%;
-  width: 80%;
+  max-width: 100%; /* Make sure images don't exceed their container width */
+  height: 100%; /* Maintain aspect ratio */
 }
+
 
 article:hover {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.12), 0 4px 6px 0 rgba(0, 0, 0, 0.22);
@@ -254,4 +256,60 @@ ul.sidenav .inpage-nav a {
 ul.sidenav .inpage-nav a:hover {
   background-color: #00438f;
   color: white;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+/* Responsive Table Styling */
+@media screen and (max-width: 600px) {
+  table {
+      border: 0;
+  }
+  table thead th {
+      display: none;
+  }
+  table, table tbody, table tr, table td {
+      display: block;
+      width: 100%;
+  }
+  table tbody tr {
+      margin-bottom: 15px;
+  }
+  table tbody tr:nth-child(odd) {
+      background-color: transparent;
+  }
+  table tbody tr:nth-child(even) {
+      background-color: transparent;
+  }
+  table tbody tr:nth-child(odd) td:before {
+      font-weight: bold;
+      width: 50%;
+      float: left;
+      content: attr(data-label);
+  }
+  table tbody tr:nth-child(even) td:before {
+      font-weight: bold;
+      width: 50%;
+      float: left;
+      content: attr(data-label);
+  }
 }
