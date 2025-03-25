@@ -45,7 +45,7 @@ This is a guide how to run the product locally. This won't get published since i
 - This project is distributed under the [MIT License](LICENSE.md)
 
 ## Contact Information
-📧 | felix.huel6@gmail.com 
+📧 | serena.huel1@gmail.com 
 
 ## Documentation
 - Extensive documentation
